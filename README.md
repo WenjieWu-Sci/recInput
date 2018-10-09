@@ -8,9 +8,12 @@ This script is used to generate reconstruction input in .npy format.
 * 28 response functions (1242 points per function): [[mean nPE]]
 
 # Build and run
+```
 g++ `root-config --cflags` `root-config --libs` recInput.cc -std=c++0x -o recInput
+
 python -c "import numpy as np ; print np.load('./tmp/pmtPos.npy') "
     ## load and print the C++ written NumPy array
+```
 
 # check output results
 python check.py
