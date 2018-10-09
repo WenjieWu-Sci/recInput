@@ -72,13 +72,13 @@ NP<double>* make_resFunc_array(int ni, int nj) {
 
 int main(int argc, char** argv) {
     // Position of each PMT
-    const char* pmtPosPath= "./tmp/pmtPos.npy";
+    const char* pmtPosPath= "./output/pmtPos.npy";
     NP<double>* pmtPos= make_pmtpos_array(17739, 2);
     pmtPos->save(pmtPosPath) ; 
     //std::cout << NPU::check(pmtPosPath) << std::endl ; 
 
     // Position of the vertex
-    const char* vrtPath= "./tmp/vrt.npy";
+    const char* vrtPath= "./output/vrt.npy";
     NP<double>* vrt= new NP<double>(1, 3);
     vrt->data[0]= 0.;
     vrt->data[1]= 0.;
@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
     vrt->save(vrtPath);
 
     // 28 response functions
-    const char* resFuncPath= "./tmp/resFunction.npy";
+    const char* resFuncPath= "./output/resFunction.npy";
     NP<double>* resFunc= make_resFunc_array(29, 1242);
     resFunc->save(resFuncPath);
 
