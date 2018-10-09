@@ -16,7 +16,10 @@ python -c "import numpy as np ; print np.load('./tmp/pmtPos.npy') "
 ```
 
 # check output results
+```
+cd tmp
 python check.py
+```
 ![Output results](https://github.com/Wgoodman007/recInput/raw/master/tmp/test.png)
 
 # References
