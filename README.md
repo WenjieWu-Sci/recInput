@@ -1,7 +1,9 @@
 # recInput
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 This script is used to generate reconstruction input in .npy format. 
 
 # Input items
-* Position of each PMT: ($PMT_{x}$, PMT_{y}, PMT_{z})
+* Position of each PMT: (PMTx, PMTy, PMTz)
+* Position of the vertex: (Xr, Yr, Zr)
+* 29 response functions: (theta, mean nPE)
+* energy scale: one constant
