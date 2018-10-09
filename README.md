@@ -9,9 +9,7 @@ This script is used to generate reconstruction input in .npy format.
 * energy scale: one constant
 
 # Build and run
-
-:: 
-    g++ recInput.cc -std=c++0x -o recInput
+g++ recInput.cc -std=c++0x -o recInput
 
 # References
 * https://github.com/simoncblyth/np
