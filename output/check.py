@@ -2,6 +2,8 @@
 
 import numpy as np
 
+pmtPos= np.load('pmtPos.npy')
+print pmtPos[0][0]
 print np.load('pmtPos.npy')
 print np.load('vrt.npy')
 print np.load('resFunction.npy') # load and print the C++ written NumPy array

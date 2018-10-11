@@ -80,15 +80,29 @@ int main(int argc, char** argv) {
     // Position of the vertex
     const char* vrtPath= "./output/vrt.npy";
     NP<double>* vrt= new NP<double>(1, 3);
-    vrt->data[0]= 0.;
-    vrt->data[1]= 0.;
-    vrt->data[2]= 0.;
+    vrt->data[0]= 1.;
+    vrt->data[1]= 2.;
+    vrt->data[2]= 3.;
     vrt->save(vrtPath);
 
     // 28 response functions
     const char* resFuncPath= "./output/resFunction.npy";
     NP<double>* resFunc= make_resFunc_array(29, 1242);
     resFunc->save(resFuncPath);
+
+    // load example: vrt.npy
+    NP<double>* vrt_load= new NP<double>(1, 3);
+    vrt_load->load(vrtPath);
+    double* vertex= vrt_load->values();
+    std::cout << vertex[0] << std::endl;
+    std::cout << vertex[1] << std::endl;
+    std::cout << vertex[2] << std::endl;
+
+    // load example: PMT positions
+    NP<double>* pmt_load= new NP<double>(17739, 2);
+    pmt_load->load(pmtPosPath);
+    double* pmtPosition= pmt_load->values();
+    for (int i= 0; i< 100; ++i) std::cout << pmtPosition[i*2] << std::endl;
 
     return 0 ; 
 }
