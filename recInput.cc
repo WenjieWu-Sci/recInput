@@ -91,18 +91,18 @@ int main(int argc, char** argv) {
     resFunc->save(resFuncPath);
 
     // load example: vrt.npy
-    NP<double>* vrt_load= new NP<double>(1, 3);
-    vrt_load->load(vrtPath);
-    double* vertex= vrt_load->values();
-    std::cout << vertex[0] << std::endl;
-    std::cout << vertex[1] << std::endl;
-    std::cout << vertex[2] << std::endl;
+    NP<double>* vrt_load= NP<double>::Load(vrtPath);
+    for (int i= 0; i< vrt_load->data.size(); ++i) {
+        std::cout << vrt_load->data[i] << std::endl;
+    }
 
     // load example: PMT positions
-    NP<double>* pmt_load= new NP<double>(17739, 2);
-    pmt_load->load(pmtPosPath);
-    double* pmtPosition= pmt_load->values();
-    for (int i= 0; i< 100; ++i) std::cout << pmtPosition[i*2] << std::endl;
+    NP<double>* pmt_load= NP<double>::Load(pmtPosPath);
+    std::cout << "total : " << pmt_load->data.size() << std::endl;
+    for (int i= 0; i< 20; ++i) {
+        std::cout << pmt_load->data[i*2] << " " 
+            << pmt_load->data[i*2+1] << std::endl;
+    }
 
     return 0 ; 
 }
